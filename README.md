@@ -1,5 +1,5 @@
 # Phase 3 Project Guidelines
-
+TEST
 ## Learning Goals
 
 - Build a web basic API with Sinatra and Active Record to support a React
