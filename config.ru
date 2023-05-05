@@ -12,6 +12,6 @@ end
 use Rack::JSONBodyParser
 
 # Our application
-use ToursController
 use CountriesController
+use ToursController
 run ApplicationController

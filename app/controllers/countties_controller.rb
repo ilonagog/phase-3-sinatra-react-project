@@ -1,3 +1,0 @@
-class CountriesController < ApplicationController
-    
-end
