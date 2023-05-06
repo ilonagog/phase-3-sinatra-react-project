@@ -1,6 +1,7 @@
 class CountriesController < ApplicationController
 
     get '/countries' do
-        "Hello World"
+        countries = Country.all
+        countries.to_json
       end
 end

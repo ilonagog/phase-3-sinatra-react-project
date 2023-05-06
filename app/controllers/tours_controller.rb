@@ -1,6 +1,7 @@
 class ToursController < ApplicationController
 
     get '/tours' do
-        "Hello World"
+       tours = Tour.all
+       tours.to_json
       end
 end
