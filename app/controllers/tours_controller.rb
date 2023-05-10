@@ -8,9 +8,9 @@ class ToursController < ApplicationController
     post '/tours' do
         country = Country.find(params[:country_id])
         tour = country.tours.create(
-            name:params[:name]
-            image_url:params[:image_url]
-            price:params[:price]
+            name:params[:name],
+            image_url:params[:image_url],
+            price:params[:price],
             days:params[:days]
             )
         tour.to_json

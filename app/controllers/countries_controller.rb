@@ -12,7 +12,7 @@ class CountriesController < ApplicationController
 
     post '/countries' do 
       country = Country.create(name:params[:name])
-      country.to_json(include::tours)
+      country.to_json(include: :tours)
     end
 
     delete '/countries' do
@@ -20,10 +20,6 @@ class CountriesController < ApplicationController
       country.destroy
       country.to_json
     end
-
-
-
-
 
 
 end
