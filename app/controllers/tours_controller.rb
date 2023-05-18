@@ -1,7 +1,7 @@
 class ToursController < ApplicationController
 
     get '/tours' do
-       tours = Tour.all
+       tours = Tour.all.select{|tour| !tour.country_id}
        tours.to_json
       end
 
