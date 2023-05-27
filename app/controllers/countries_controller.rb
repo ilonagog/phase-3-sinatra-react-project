@@ -1,25 +1,10 @@
 class CountriesController < ApplicationController
-
     get '/countries' do
         countries = Country.all
         countries.to_json(include: :tours)
-      end
-
-    #   get '/countries/:id' do
-    #     country = Country.find(params[:id])
-    #     country.to_json(include: :tours)
-    # end
-
+    end
     post '/countries' do 
-      country = Country.create(name:params[:name])
+      country = Country.create(params)
       country.to_json(include: :tours)
     end
-
-    delete '/countries/:id' do
-      country = Country.find(params[:id])
-      country.destroy
-      country.to_json
-    end
-
-
 end
