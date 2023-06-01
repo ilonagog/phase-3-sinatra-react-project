@@ -9,20 +9,22 @@ class ToursController < ApplicationController
             image_url: params[:image_url],
             price: params[:price],
             days: params[:days]
-            )
+        )
         tour.to_json
     end
 
-     patch'/countries/:country_id/tours/:id' do
-         tour = Tour.find(params[:id])
-         tour.update(
-             name: params[:name],
-             image_url: params[:image_url],
-             price: params[:price],
-             days: params[:days]
-         )
-         tour.to_json
-     end
+    patch '/countries/:country_id/tours/:id' do
+        # binding.pry
+        country = Country.find_by(id: params[:country_id])
+        tour = country.tours.find_by(id: params[:id])
+        tour.update(
+            name: params[:name],
+            image_url: params[:image_url],
+            price: params[:price],
+            days: params[:days]
+        )
+        tour.to_json
+    end
 
      delete '/countries/:country_id/tours/:id' do
         country = Country.find_by(id: params[:country_id])
